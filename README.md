@@ -75,6 +75,25 @@ The final coursework release/submission will provide:
 - real-time result video
 - final dataset package
 
+## Jetson Real-Object Evaluation
+
+The frozen predefined acceptance test achieved:
+
+| Evaluation | Correct / Total | Accuracy |
+|---|---:|---:|
+| Predefined 20-object manifest | 17 / 20 | 85.00% |
+| Actual-scene visual audit | 19 / 22 | 86.36% |
+
+The official coursework score is **17/20 = 85.00%**, exceeding the required
+80% threshold.
+
+Manual inspection additionally identified two real mouse objects that were
+visible in the photographs but absent from the predefined manifest. Detailed
+results and annotated evidence are stored under `evaluation/`.
+
+The measured PyTorch/CUDA inference-only throughput during this evaluation was
+approximately **34.10 FPS**.
+
 ## Current Status
 
 Model training and model selection are complete.

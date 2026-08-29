@@ -1,0 +1,3 @@
+evaluation_scope,correct,total,accuracy_percent,unmatched_or_false_positive_boxes,note
+predefined_manifest,17,20,85.00,3,"Original automatic evaluation against the frozen 20-object manifest"
+actual_scene_visual_audit,19,22,86.36,1,"Visual review found two real additional mouse objects not included in the original manifest; one unmatched detection remained a genuine false positive"

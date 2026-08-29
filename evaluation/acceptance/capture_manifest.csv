@@ -1,0 +1,11 @@
+scene_id,filename,object_ids,expected_classes,object_count,captured_at,width,height
+S01,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S01.jpg,B01,bottle,1,2026-08-28T16:34:06,640,480
+S02,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S02.jpg,M01,mouse,1,2026-08-28T16:34:32,640,480
+S03,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S03.jpg,K01,keyboard,1,2026-08-28T16:36:01,640,480
+S04,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S04.jpg,B02|M02,bottle|mouse,2,2026-08-28T16:36:46,640,480
+S05,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S05.jpg,B03|K02,bottle|keyboard,2,2026-08-28T16:37:02,640,480
+S06,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S06.jpg,B04|K03,bottle|keyboard,2,2026-08-28T16:37:48,640,480
+S07,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S07.jpg,M03|K04,mouse|keyboard,2,2026-08-28T16:38:13,640,480
+S08,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S08.jpg,B05|M04|K05,bottle|mouse|keyboard,3,2026-08-28T16:39:25,640,480
+S09,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S09.jpg,B06|M05|K06,bottle|mouse|keyboard,3,2026-08-28T16:40:09,640,480
+S10,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S10.jpg,B07|M06|K07,bottle|mouse|keyboard,3,2026-08-28T16:41:19,640,480

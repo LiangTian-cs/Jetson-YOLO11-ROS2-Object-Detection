@@ -1,0 +1,11 @@
+scene_id,image,expected_classes,predicted_classes,objects_correct,objects_total,false_positive_boxes,preprocess_ms,inference_ms,postprocess_ms,wall_ms
+S01,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S01.jpg,bottle,bottle,1,1,0,23.50139800000761,34.546345000308065,18.376522000835394,2339.3695530003242
+S02,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S02.jpg,mouse,mouse|mouse,1,1,1,3.808544000094116,34.405123999931675,4.446198000550794,46.99277899999288
+S03,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S03.jpg,keyboard,keyboard,1,1,0,3.238156000406889,34.349921999819344,4.175469000074372,45.98992899991572
+S04,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S04.jpg,bottle|mouse,mouse,1,2,0,2.8644160001931596,34.40137899997353,2.9918119998910697,44.76921600053174
+S05,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S05.jpg,bottle|keyboard,keyboard|bottle,2,2,0,2.7557729999898584,31.990610000320885,3.0478779999612016,42.42228999919462
+S06,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S06.jpg,bottle|keyboard,bottle,1,2,0,2.2124899996924796,21.219272000053024,2.9227539998828433,30.92852700046933
+S07,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S07.jpg,mouse|keyboard,keyboard|mouse,2,2,0,2.264555999317963,25.308691000645922,2.918498000326508,34.92306099997222
+S08,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S08.jpg,bottle|mouse|keyboard,mouse|keyboard|bottle,3,3,0,2.7214029996684985,33.69572399969911,4.783104000125604,45.85955699985789
+S09,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S09.jpg,bottle|mouse|keyboard,mouse|bottle|mouse|keyboard,3,3,1,2.1962979999443633,21.058243999505066,3.1922680000207038,30.95208000013372
+S10,/home/nvidia/yolo_deploy/results/DZH_final_acceptance_multi/raw/S10.jpg,bottle|mouse|keyboard,keyboard|mouse|mouse,2,3,1,2.1243279998088838,22.279947999777505,2.9824680004821857,32.123318999765615
