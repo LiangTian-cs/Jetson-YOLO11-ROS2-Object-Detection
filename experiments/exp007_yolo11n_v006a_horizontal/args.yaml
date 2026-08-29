@@ -1,10 +1,10 @@
 task: detect
 mode: train
-model: runs/exp004_yolo11n_v004/weights/best.pt
-data: dataset_versions/dataset_v005_finetune/data.yaml
-epochs: 40
+model: weights/yolo11n.pt
+data: dataset_versions/dataset_v006a_horizontal_bottle_ablation/data.yaml
+epochs: 100
 time: null
-patience: 12
+patience: 20
 batch: 16
 imgsz: 640
 save: true
@@ -13,11 +13,11 @@ cache: false
 device: '0'
 workers: 8
 project: runs
-name: exp005_yolo11n_v005_adapt
+name: exp007_yolo11n_v006a_horizontal
 exist_ok: true
 pretrained: true
 cls_remap: true
-optimizer: auto
+optimizer: AdamW
 verbose: true
 seed: 42
 deterministic: true
@@ -72,7 +72,7 @@ simplify: true
 opset: null
 workspace: null
 nms: false
-lr0: 0.001
+lr0: 0.01
 lrf: 0.01
 momentum: 0.937
 weight_decay: 0.0005
@@ -113,4 +113,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: /root/autodl-tmp/ros2_object_detection/runs/detect/runs/exp005_yolo11n_v005_adapt
+save_dir: /root/autodl-tmp/ros2_object_detection/runs/detect/runs/exp007_yolo11n_v006a_horizontal

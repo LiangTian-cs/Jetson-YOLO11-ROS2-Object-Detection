@@ -4,35 +4,37 @@ Desktop object detection coursework project.
 
 ## Current Stage
 
-Deployment-domain adaptation experiments.
+Public hard-case augmentation experiments.
 
-After selecting exp004 as the strongest clean model in the previous stage,
-real camera testing revealed a deployment-domain gap, particularly for some
-bottle appearances and viewpoints.
+Previous deployment-adaptation experiments showed that deployment-domain
+samples could improve performance on previously observed objects, but those
+experiments were not suitable as independent generalization evidence.
 
-Two exploratory adaptation experiments were therefore conducted.
+The next step was therefore to investigate whether publicly sourced hard-case
+samples could improve difficult deployment scenarios without using captured
+deployment samples.
 
-## Adaptation Experiments
+## Hard-case Experiments
 
-| Experiment | Model | Main Change | Deployment Observation |
-|---|---|---|---|
-| exp005 | YOLO11n | Added deployment-domain captured samples | Strong improvement on previously observed Mac examples |
-| exp006 | YOLO11n | Added additional diversity to the adaptation data | Maintained strong performance on the same deployment check |
+| Experiment | Main Change | Validation mAP50-95 | Deployment Check |
+|---|---|---:|---:|
+| exp007 | Added 15 public horizontal-bottle hard cases | 0.484 | 1/8 |
+| exp008 | Added 48 public deployment hard cases across multiple classes | 0.521 | 0/8 |
 
-Both experiments achieved 8/8 on the previously observed Mac bottle check.
+exp007 showed that adding a small number of horizontal-bottle examples caused
+a substantial degradation in validation and deployment performance.
 
-However, these results are **not treated as independent generalization
-evidence**, because deployment-domain captured samples were included in the
-adaptation training process.
+exp008 increased the diversity of public hard cases, but performance still
+remained below the clean v004 model. A bottle-to-mouse class confusion was
+also observed during deployment testing.
 
-The experiments demonstrate that deployment-specific data can rapidly
-improve same-domain performance, but they also introduce a risk of instance
-overfitting and data leakage.
+These experiments indicate that simply adding difficult samples from a
+different public-data distribution does not necessarily improve deployment
+generalization.
 
-For this reason, exp005 and exp006 are treated as exploratory adaptation
-experiments rather than final deployment-model candidates.
+The public hard-case augmentation strategy was therefore rejected.
 
-**Next step:** investigate whether public hard-case data can improve difficult
-poses without relying on deployment-domain training samples.
+**Next step:** return to the strongest clean model, exp004, and freeze it for
+formal deployment.
 
 > Work in progress.
