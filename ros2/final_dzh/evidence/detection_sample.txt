@@ -1,0 +1,24 @@
+header:
+  stamp:
+    sec: 1788014149
+    nanosec: 591914819
+  frame_id: dzh_camera
+image_width: 640
+image_height: 480
+fps: 12.475483894348145
+detections:
+- class_id: 2
+  class_name: keyboard
+  confidence: 0.8681669235229492
+  xmin: 0
+  ymin: 217
+  xmax: 547
+  ymax: 474
+- class_id: 1
+  class_name: mouse
+  confidence: 0.35364094376564026
+  xmin: 549
+  ymin: 234
+  xmax: 639
+  ymax: 311
+---

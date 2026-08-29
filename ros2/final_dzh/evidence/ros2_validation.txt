@@ -1,0 +1,39 @@
+===== DATE =====
+2026年 08月 29日 星期六 22:27:01 CST
+===== PLATFORM =====
+Linux nvidia-desktop 5.15.148-tegra #4 SMP PREEMPT Tue Mar 25 15:01:52 CST 2025 aarch64 aarch64 aarch64 GNU/Linux
+===== MODEL SHA256 =====
+7f084f4d2a106585b4d74f186e78dd4b7ac1b1d7dda0aa93fa5ffda82c5d81eb  /home/nvidia/yolo_deploy/models/best_DZH.pt
+===== NODE =====
+/dzh_yolo_camera_node
+===== TOPIC INFO =====
+Type: yolo_interfaces/msg/DetectionArray
+Publisher count: 1
+Subscription count: 0
+===== MESSAGE =====
+header:
+  stamp:
+    sec: 1788013623
+    nanosec: 991904700
+  frame_id: dzh_camera
+image_width: 640
+image_height: 480
+fps: 12.600470542907715
+detections: []
+---
+===== TOPIC RATE =====
+WARNING: topic [/DZH/yolo/detections] does not appear to be published yet
+average rate: 12.505
+	min: 0.077s max: 0.083s std dev: 0.00122s window: 14
+average rate: 12.501
+	min: 0.075s max: 0.083s std dev: 0.00188s window: 27
+average rate: 12.486
+	min: 0.075s max: 0.084s std dev: 0.00171s window: 40
+average rate: 12.490
+	min: 0.075s max: 0.084s std dev: 0.00162s window: 53
+average rate: 12.492
+	min: 0.075s max: 0.084s std dev: 0.00155s window: 66
+average rate: 12.483
+	min: 0.075s max: 0.087s std dev: 0.00166s window: 79
+average rate: 12.486
+	min: 0.075s max: 0.087s std dev: 0.00166s window: 92
