@@ -1,7 +1,7 @@
 task: detect
 mode: train
-model: weights/yolo11n.pt
-data: dataset_versions/dataset_v006b_public_deployment_hardcase/data.yaml
+model: /root/autodl-tmp/ros2_object_detection/weights/yolo11n.pt
+data: /root/autodl-tmp/ros2_object_detection/dataset_versions/dataset_v004_three_class_final/yolo/data.yaml
 epochs: 100
 time: null
 patience: 20
@@ -12,9 +12,9 @@ save_period: -1
 cache: false
 device: '0'
 workers: 8
-project: runs
-name: exp008_yolo11n_v006b_public_hardcase
-exist_ok: true
+project: /root/autodl-tmp/ros2_object_detection/runs
+name: exp004_yolo11n_v004
+exist_ok: false
 pretrained: true
 cls_remap: true
 optimizer: AdamW
@@ -72,7 +72,7 @@ simplify: true
 opset: null
 workspace: null
 nms: false
-lr0: 0.01
+lr0: 0.001
 lrf: 0.01
 momentum: 0.937
 weight_decay: 0.0005
@@ -113,4 +113,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: /root/autodl-tmp/ros2_object_detection/runs/detect/runs/exp008_yolo11n_v006b_public_hardcase
+save_dir: /root/autodl-tmp/ros2_object_detection/runs/exp004_yolo11n_v004

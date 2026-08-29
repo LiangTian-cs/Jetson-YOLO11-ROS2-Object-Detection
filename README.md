@@ -4,37 +4,57 @@ Desktop object detection coursework project.
 
 ## Current Stage
 
-Public hard-case augmentation experiments.
+Formal deployment model selected and frozen.
 
-Previous deployment-adaptation experiments showed that deployment-domain
-samples could improve performance on previously observed objects, but those
-experiments were not suitable as independent generalization evidence.
-
-The next step was therefore to investigate whether publicly sourced hard-case
-samples could improve difficult deployment scenarios without using captured
-deployment samples.
-
-## Hard-case Experiments
-
-| Experiment | Main Change | Validation mAP50-95 | Deployment Check |
-|---|---|---:|---:|
-| exp007 | Added 15 public horizontal-bottle hard cases | 0.484 | 1/8 |
-| exp008 | Added 48 public deployment hard cases across multiple classes | 0.521 | 0/8 |
-
-exp007 showed that adding a small number of horizontal-bottle examples caused
-a substantial degradation in validation and deployment performance.
-
-exp008 increased the diversity of public hard cases, but performance still
-remained below the clean v004 model. A bottle-to-mouse class confusion was
-also observed during deployment testing.
-
-These experiments indicate that simply adding difficult samples from a
-different public-data distribution does not necessarily improve deployment
-generalization.
-
-The public hard-case augmentation strategy was therefore rejected.
-
-**Next step:** return to the strongest clean model, exp004, and freeze it for
+After baseline comparison, dataset expansion, deployment-domain adaptation,
+and public hard-case experiments, the clean exp004 model was selected for
 formal deployment.
+
+## Final Model Selection
+
+| Item | Selection |
+|---|---|
+| Model | YOLO11n |
+| Experiment | exp004 |
+| Dataset | frozen v004 |
+| Target classes | bottle, mouse, keyboard |
+| Training images | 388 |
+| Bounding boxes | 609 |
+
+### Validation Performance
+
+| Precision | Recall | mAP50 | mAP50-95 |
+|---:|---:|---:|---:|
+| 0.8095 | 0.6839 | 0.7818 | 0.5861 |
+
+## Selection Rationale
+
+exp004 was retained as the final deployment model because it provided the
+strongest clean validation performance without using deployment-domain
+captured samples for training.
+
+Later experiments were useful for analysis but were not selected:
+
+- exp005 and exp006 improved performance on previously observed deployment
+  examples, but included deployment-domain adaptation data.
+- exp007 and exp008 used public hard-case augmentation but reduced overall
+  validation and deployment performance.
+
+The final decision was therefore to return to and freeze exp004.
+
+## Model Artifact
+
+The trained `best.pt` binary is not stored directly in the Git source tree.
+
+Its SHA256 checksum is provided under:
+
+`model_selection/exp004/best.pt.sha256`
+
+The final model binary will be provided as a release/submission artifact.
+
+## Next Step
+
+Export and validate the frozen model for deployment, then integrate real-time
+Jetson inference, ROS2 result publishing, and TensorRT acceleration.
 
 > Work in progress.
