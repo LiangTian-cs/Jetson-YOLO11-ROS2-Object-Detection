@@ -1,0 +1,31 @@
+{
+  "source_csv": "demo_20260828_175009.csv",
+  "backend": "PyTorch / Ultralytics CUDA",
+  "device": "NVIDIA Jetson",
+  "imgsz": 640,
+  "confidence_threshold": 0.25,
+  "rect": false,
+  "unique_frames": 1742,
+  "duration_sec": 87.832,
+  "recorded_frame_rate_fps": 19.833,
+  "mean_end_to_end_fps": 20.548,
+  "min_end_to_end_fps": 14.977,
+  "max_end_to_end_fps": 24.934,
+  "mean_preprocess_ms": 2.622,
+  "mean_inference_ms": 25.783,
+  "p95_inference_ms": 26.125,
+  "mean_postprocess_ms": 3.029,
+  "frames_with_detection": 1566,
+  "detection_row_counts": {
+    "mouse": 1826,
+    "keyboard": 852,
+    "bottle": 208
+  },
+  "course_minimum_fps": 5.0,
+  "passes_course_fps_requirement": true,
+  "notes": [
+    "Statistics are computed once per unique frame_index.",
+    "Detection row counts are not object-accuracy metrics.",
+    "TensorRT performance is evaluated separately."
+  ]
+}

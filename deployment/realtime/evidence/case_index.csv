@@ -1,0 +1,1 @@
+timestamp,case_type,raw_image,annotated_image,metadata_json,fps,preprocess_ms,inference_ms,postprocess_ms,detection_count,detections

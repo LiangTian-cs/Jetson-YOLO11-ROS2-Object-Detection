@@ -94,6 +94,19 @@ results and annotated evidence are stored under `evaluation/`.
 The measured PyTorch/CUDA inference-only throughput during this evaluation was
 approximately **34.10 FPS**.
 
+## Real-Time Jetson Camera Demo
+
+A recorded Jetson PyTorch/CUDA camera run processed
+**1742 frames over 87.832 seconds**.
+
+The measured mean end-to-end processing rate was
+**20.55 FPS**, exceeding the coursework requirement
+of 5 FPS.
+
+The browser-based recording programs and runtime evidence are available under
+`deployment/realtime/`. Large MP4 files are kept outside normal Git history
+and are intended for the final Release/coursework package.
+
 ## Current Status
 
 Model training and model selection are complete.
