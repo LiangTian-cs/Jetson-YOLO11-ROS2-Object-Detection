@@ -131,7 +131,37 @@ Completed:
 
 Remaining deployment stages:
 
-- recover and preserve the final Jetson-specific ROS2 publisher
-- TensorRT FP16 engine generation and benchmarking on Jetson
-- final ROS2 topic evidence and deployment documentation
+- Jetson-specific DZH ROS2 publisher validated on hardware
+- TensorRT FP16 engine generated and benchmarked on Jetson
+- final ROS2 topic and deployment evidence preserved
 - final coursework report and release artifacts
+
+
+## Final Jetson Deployment Validation
+
+The final DZH ROS2 detector was built and validated on the Jetson Orin platform.
+
+- ROS2 node: `dzh_yolo_camera_node`
+- Topic: `/DZH/yolo/detections`
+- Message: `yolo_interfaces/msg/DetectionArray`
+- Camera: `/dev/video0`, YUYV, 640x480 @ 30 FPS
+- Inference configuration: `conf=0.25`, `imgsz=640`, `rect=False`
+- Hardware ROS2 topic rate: approximately **12.49 Hz**, exceeding the 5 FPS coursework requirement
+- A recorded ROS2 message contained simultaneous `keyboard` and `mouse` detections with class, confidence and bounding-box fields
+
+ROS2 runtime evidence is preserved under `ros2/final_dzh/evidence/`.
+
+A TensorRT FP16 engine was generated directly on the Jetson using TensorRT 10.3.0.
+
+- Engine: `best_DZH_fp16.engine`
+- Engine size: approximately 8.5 MB
+- SHA256: `c97a0b14083db07d03cb8f4afc52e7f9959d8492a39885a6216b7fbe79d0a14a`
+- TensorRT camera benchmark: 25 measured frames after 5 warm-up frames
+- Mean inference pipeline latency: **23.45 ms**
+- Mean TensorRT inference pipeline throughput: **42.64 FPS**
+
+The TensorRT number above is the inference-pipeline throughput after a camera frame has been acquired; it is not reported as complete camera end-to-end FPS. The separately recorded PyTorch/CUDA real-time camera demonstration achieved approximately **20.55 FPS end-to-end**.
+
+The frozen 20-object acceptance manifest achieved **17/20 = 85%**, satisfying the required accuracy threshold. A supplementary visual audit of all physical objects visible in the captured scenes counted **19/22 = 86.36%**.
+
+TensorRT evidence is preserved under `deployment/tensorrt/evidence/`. The platform-specific `.engine` binary is intentionally excluded from normal Git history and is intended for the final Release/course submission.
