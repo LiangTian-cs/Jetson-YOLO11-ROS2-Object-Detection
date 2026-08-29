@@ -1,0 +1,41 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Datasets
+dataset_versions/
+dataset_expansion/
+datasets/
+COCO/
+coco/
+OpenImages/
+
+# Raw training outputs
+runs/
+
+# Model binaries
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Videos
+*.mp4
+*.mov
+*.avi
+
+# ROS2 generated
+build/
+install/
+log/
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Temporary
+*.tmp
+*.log
