@@ -1,60 +1,86 @@
 # Jetson YOLO11 ROS2 Object Detection
 
-Desktop object detection coursework project.
+Real-time desktop object detection using YOLO11, NVIDIA Jetson and ROS2.
 
-## Current Stage
+## Target Classes
 
-Formal deployment model selected and frozen.
+- bottle
+- mouse
+- keyboard
 
-After baseline comparison, dataset expansion, deployment-domain adaptation,
-and public hard-case experiments, the clean exp004 model was selected for
-formal deployment.
+## Selected Model
 
-## Final Model Selection
+The final deployment model is YOLO11n from experiment `exp004`,
+trained on the frozen `v004` dataset.
 
-| Item | Selection |
-|---|---|
-| Model | YOLO11n |
-| Experiment | exp004 |
-| Dataset | frozen v004 |
-| Target classes | bottle, mouse, keyboard |
-| Training images | 388 |
-| Bounding boxes | 609 |
+| Metric | Result |
+|---|---:|
+| Precision | 0.8095 |
+| Recall | 0.6839 |
+| mAP50 | 0.7818 |
+| mAP50-95 | 0.5861 |
 
-### Validation Performance
+Dataset v004 contains 388 images and 609 annotated bounding boxes.
 
-| Precision | Recall | mAP50 | mAP50-95 |
-|---:|---:|---:|---:|
-| 0.8095 | 0.6839 | 0.7818 | 0.5861 |
+Later adaptation and public hard-case experiments are preserved in Git
+history. They were not selected for formal deployment.
 
-## Selection Rationale
+## Deployment Pipeline
 
-exp004 was retained as the final deployment model because it provided the
-strongest clean validation performance without using deployment-domain
-captured samples for training.
+```text
+YOLO11n exp004
+      |
+      v
+  PyTorch .pt
+      |
+      v
+     ONNX
+      |
+      v
+ NVIDIA Jetson
+      |
+      +--> Real-time USB camera inference
+      |
+      +--> ROS2 detection publishing
+      |
+      v
+ TensorRT FP16
+```
 
-Later experiments were useful for analysis but were not selected:
+## Deployment Contract
 
-- exp005 and exp006 improved performance on previously observed deployment
-  examples, but included deployment-domain adaptation data.
-- exp007 and exp008 used public hard-case augmentation but reduced overall
-  validation and deployment performance.
+- Input image size: `640`
+- Rectangular preprocessing: `rect=False`
+- Default confidence threshold: `0.25`
+- Classes: `bottle`, `mouse`, `keyboard`
 
-The final decision was therefore to return to and freeze exp004.
+## Repository Structure
 
-## Model Artifact
+- `model_selection/` - final model-selection evidence
+- `dataset_metadata/` - frozen dataset metadata
+- `deployment/` - export, validation and deployment utilities
 
-The trained `best.pt` binary is not stored directly in the Git source tree.
+Earlier training experiments are preserved through Git commit history instead
+of being duplicated in the latest repository tree.
 
-Its SHA256 checksum is provided under:
+## Binary Artifacts
 
-`model_selection/exp004/best.pt.sha256`
+Large binary artifacts are intentionally excluded from normal Git history.
 
-The final model binary will be provided as a release/submission artifact.
+The final coursework release/submission will provide:
 
-## Next Step
+- trained PyTorch model (`.pt`)
+- exported ONNX model (`.onnx`)
+- Jetson-generated TensorRT FP16 engine (`.engine`)
+- real-time result video
+- final dataset package
 
-Export and validate the frozen model for deployment, then integrate real-time
-Jetson inference, ROS2 result publishing, and TensorRT acceleration.
+## Current Status
+
+Model training and model selection are complete.
+
+The selected exp004 model has been exported to ONNX. The next development
+stages cover Jetson real-time inference, independent real-object evaluation,
+ROS2 integration and TensorRT acceleration.
 
 > Work in progress.
