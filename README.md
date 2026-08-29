@@ -107,12 +107,31 @@ The browser-based recording programs and runtime evidence are available under
 `deployment/realtime/`. Large MP4 files are kept outside normal Git history
 and are intended for the final Release/coursework package.
 
+## ROS2 Integration
+
+A pre-deployment ROS2 prototype is preserved under `ros2/prototype/`.
+
+The prototype implements a three-node camera, YOLO detector and visualization
+pipeline using `sensor_msgs/Image` and `vision_msgs/Detection2DArray`.
+
+It represents an earlier development stage and is intentionally kept separate
+from the final Jetson-specific ROS2 interface.
+
 ## Current Status
 
-Model training and model selection are complete.
+Completed:
 
-The selected exp004 model has been exported to ONNX. The next development
-stages cover Jetson real-time inference, independent real-object evaluation,
-ROS2 integration and TensorRT acceleration.
+- dataset construction and dataset versioning
+- YOLOv8n / YOLO11n experiment comparison
+- final exp004 YOLO11n model selection
+- ONNX export and validation utilities
+- independent real-object acceptance evaluation
+- Jetson PyTorch/CUDA real-time camera demonstration
+- preservation of the pre-deployment ROS2 prototype
 
-> Work in progress.
+Remaining deployment stages:
+
+- recover and preserve the final Jetson-specific ROS2 publisher
+- TensorRT FP16 engine generation and benchmarking on Jetson
+- final ROS2 topic evidence and deployment documentation
+- final coursework report and release artifacts

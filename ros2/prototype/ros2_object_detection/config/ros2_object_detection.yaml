@@ -1,0 +1,34 @@
+# Canonical parameter defaults for the ros2_object_detection pipeline.
+# Loaded by launch/ros2_object_detection.launch.py. Adjust per deployment machine.
+# To override per-run, pass a launch argument (e.g. source_type:=image image_path:=...).
+
+camera_node:
+  ros__parameters:
+    source_type: usb            # "usb" | "image"
+    device_index: 0
+    device_url: ""              # optional; if set, overrides device_index (e.g. /dev/video1)
+    image_path: ""              # required when source_type=image (file or directory)
+    image_topic: /camera/image_raw
+    frame_id: camera
+    fps: 30.0
+    width: 0                    # 0 = camera default resolution
+    height: 0
+    loop: true                  # for source_type=image: repeat images when exhausted
+
+yolo_detector_node:
+  ros__parameters:
+    # Path to the trained YOLO11n v004 weights. Update for the deployment machine.
+    weights: /root/autodl-tmp/ros2_object_detection/runs/exp004_yolo11n_v004/weights/best.pt
+    image_topic: /camera/image_raw
+    detection_topic: /detections
+    confidence: 0.25
+    imgsz: 640
+    device: "0"                 # "0" = first CUDA device, "cpu" = CPU
+    log_detections: false       # true logs every detection (class / conf / bbox)
+
+display_node:
+  ros__parameters:
+    detection_topic: /detections
+    image_topic: /camera/image_raw
+    subscribe_image: true
+    display_mode: window        # "window" | "log"
