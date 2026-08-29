@@ -1,0 +1,12 @@
+===== DATE =====
+2026年 08月 29日 星期六 22:49:25 CST
+===== PLATFORM =====
+Linux nvidia-desktop 5.15.148-tegra #4 SMP PREEMPT Tue Mar 25 15:01:52 CST 2025 aarch64 aarch64 aarch64 GNU/Linux
+===== TENSORRT =====
+TensorRT: 10.3.0
+torch: 2.10.0
+CUDA: True
+GPU: Orin
+===== ENGINE =====
+-rw-rw-r-- 1 nvidia nvidia 8.5M  8月 29 22:46 /home/nvidia/yolo_deploy/models/best_DZH_fp16.engine
+c97a0b14083db07d03cb8f4afc52e7f9959d8492a39885a6216b7fbe79d0a14a  /home/nvidia/yolo_deploy/models/best_DZH_fp16.engine

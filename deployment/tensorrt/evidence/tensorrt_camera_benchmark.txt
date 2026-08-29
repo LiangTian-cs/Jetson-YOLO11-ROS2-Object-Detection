@@ -1,0 +1,12 @@
+Loading /home/nvidia/yolo_deploy/models/best_DZH_fp16.engine for TensorRT inference...
+[08/29/2026-22:49:36] [TRT] [I] Loaded engine size: 8 MiB
+[08/29/2026-22:49:36] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +9, now: CPU 0, GPU 14 (MiB)
+names: {0: 'bottle', 1: 'mouse', 2: 'keyboard'}
+Loading /home/nvidia/yolo_deploy/models/best_DZH_fp16.engine for TensorRT inference...
+[08/29/2026-22:49:37] [TRT] [I] Loaded engine size: 8 MiB
+[08/29/2026-22:49:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +9, now: CPU 0, GPU 14 (MiB)
+sample detections: [['mouse', 'keyboard'], ['mouse', 'keyboard', 'mouse'], ['keyboard', 'mouse'], ['keyboard', 'mouse'], ['mouse', 'keyboard', 'mouse']]
+measured frames: 25
+average inference pipeline ms: 23.451733200008675
+average FPS: 42.64077164239742
+TENSORRT CAMERA TEST PASS
