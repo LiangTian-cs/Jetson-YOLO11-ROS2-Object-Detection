@@ -35,7 +35,7 @@ The machine-generated evaluation files are preserved without modification.
 The automatic evaluator counted detections outside the predefined manifest as
 unmatched or false-positive boxes.
 
-Manual review of the saved annotated photographs showed that two of these
+Manual review of the saved annotated photographs showed that two unmatched
 mouse detections corresponded to real additional physical objects visible in
 the scenes but not listed in the original 20-object manifest.
 
@@ -48,8 +48,7 @@ The photographed scenes therefore contained 22 relevant objects in total.
 | keyboard | 6 | 7 | 85.71% |
 | **Overall** | **19** | **22** | **86.36%** |
 
-After visual review, one unmatched detection remained a genuine false
-positive.
+After visual review, one unmatched detection remained a genuine false positive.
 
 The official coursework acceptance result remains **17/20 = 85.00%** because
 the predefined evaluation protocol contains 20 objects.

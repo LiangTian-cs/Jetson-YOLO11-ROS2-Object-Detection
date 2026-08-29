@@ -39,3 +39,7 @@ log/
 # Temporary
 *.tmp
 *.log
+
+# macOS metadata
+.DS_Store
+._*
