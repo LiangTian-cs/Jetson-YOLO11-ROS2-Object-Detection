@@ -1,0 +1,13 @@
+dzh_yolo_camera_node:
+  ros__parameters:
+    model_path: /home/nvidia/yolo_deploy/models/best_DZH.pt
+    camera_index: 0
+    confidence: 0.25
+    imgsz: 640
+    device: "0"
+    topic: /DZH/yolo/detections
+    frame_id: dzh_camera
+    width: 640
+    height: 480
+    camera_fps: 30.0
+    log_every: 30
