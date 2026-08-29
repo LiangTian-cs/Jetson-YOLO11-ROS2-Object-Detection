@@ -4,33 +4,35 @@ Desktop object detection coursework project.
 
 ## Current Stage
 
-Dataset improvement and model comparison.
+Deployment-domain adaptation experiments.
 
-The initial v003 dataset was expanded after analysing errors from the
-baseline experiments.
+After selecting exp004 as the strongest clean model in the previous stage,
+real camera testing revealed a deployment-domain gap, particularly for some
+bottle appearances and viewpoints.
 
-### Dataset Development
+Two exploratory adaptation experiments were therefore conducted.
 
-| Dataset | Images | Bounding Boxes |
-|---|---:|---:|
-| v003 | 140 | 249 |
-| v004 | 388 | 609 |
+## Adaptation Experiments
 
-The expanded v004 dataset was frozen before the next model comparison.
+| Experiment | Model | Main Change | Deployment Observation |
+|---|---|---|---|
+| exp005 | YOLO11n | Added deployment-domain captured samples | Strong improvement on previously observed Mac examples |
+| exp006 | YOLO11n | Added additional diversity to the adaptation data | Maintained strong performance on the same deployment check |
 
-## v004 Experiments
+Both experiments achieved 8/8 on the previously observed Mac bottle check.
 
-| Experiment | Model | Precision | Recall | mAP50 | mAP50-95 |
-|---|---|---:|---:|---:|---:|
-| exp003 | YOLOv8n | 0.7754 | 0.6702 | 0.7565 | 0.5352 |
-| exp004 | YOLO11n | 0.8095 | 0.6839 | 0.7818 | 0.5861 |
+However, these results are **not treated as independent generalization
+evidence**, because deployment-domain captured samples were included in the
+adaptation training process.
 
-YOLO11n on the expanded dataset achieved the strongest overall validation
-performance in this stage.
+The experiments demonstrate that deployment-specific data can rapidly
+improve same-domain performance, but they also introduce a risk of instance
+overfitting and data leakage.
 
-**Current best model:** exp004 - YOLO11n trained on frozen dataset v004.
+For this reason, exp005 and exp006 are treated as exploratory adaptation
+experiments rather than final deployment-model candidates.
 
-**Next step:** investigate deployment-domain behaviour and difficult
-real-world examples.
+**Next step:** investigate whether public hard-case data can improve difficult
+poses without relying on deployment-domain training samples.
 
 > Work in progress.

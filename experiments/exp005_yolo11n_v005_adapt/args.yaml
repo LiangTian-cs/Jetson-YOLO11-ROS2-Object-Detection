@@ -1,10 +1,10 @@
 task: detect
 mode: train
-model: /root/autodl-tmp/ros2_object_detection/weights/yolov8n.pt
-data: /root/autodl-tmp/ros2_object_detection/dataset_versions/dataset_v004_three_class_final/yolo/data.yaml
-epochs: 100
+model: runs/exp004_yolo11n_v004/weights/best.pt
+data: dataset_versions/dataset_v005_finetune/data.yaml
+epochs: 40
 time: null
-patience: 20
+patience: 12
 batch: 16
 imgsz: 640
 save: true
@@ -12,12 +12,12 @@ save_period: -1
 cache: false
 device: '0'
 workers: 8
-project: /root/autodl-tmp/ros2_object_detection/runs
-name: exp003_yolov8n_v004
-exist_ok: false
+project: runs
+name: exp005_yolo11n_v005_adapt
+exist_ok: true
 pretrained: true
 cls_remap: true
-optimizer: AdamW
+optimizer: auto
 verbose: true
 seed: 42
 deterministic: true
@@ -113,4 +113,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: /root/autodl-tmp/ros2_object_detection/runs/exp003_yolov8n_v004
+save_dir: /root/autodl-tmp/ros2_object_detection/runs/detect/runs/exp005_yolo11n_v005_adapt
